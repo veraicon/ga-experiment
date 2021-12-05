@@ -4,12 +4,11 @@ jobs:
   Explore-GitHub-Actions1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hi job1"
+      - run: echo $EXAMPLE_ENV
+        env:
+          EXAMPLE_ENV: ${{ secrets.HUANBISECRET }}
       - name: step with docker
         uses: docker://alpine:3.8
-        run: |
-          whoami
-          ls
   Explore-GitHub-Actions2:
     runs-on: ubuntu-latest
     needs: Explore-GitHub-Actions1
