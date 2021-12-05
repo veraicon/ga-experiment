@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hi job1"
+      - name: step with docker
+        uses: docker://alpine:3.8
   Explore-GitHub-Actions2:
     runs-on: ubuntu-latest
     needs: Explore-GitHub-Actions1
