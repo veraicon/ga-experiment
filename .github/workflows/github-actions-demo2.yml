@@ -1,5 +1,10 @@
 name: GitHub Actions Demo 2
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+  schedule:
+    - cron:  '0 */10 * * *'
 jobs:
   Explore-GitHub-Actions1:
     runs-on: ubuntu-latest
