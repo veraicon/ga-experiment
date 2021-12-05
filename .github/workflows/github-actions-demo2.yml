@@ -4,9 +4,12 @@ jobs:
   Explore-GitHub-Actions1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $EXAMPLE_ENV
+      - run:  |
+          echo $EXAMPLE_ENV
+          echo $EXANPLE_ENV_NON_SECRET
         env:
           EXAMPLE_ENV: ${{ secrets.HUANBISECRET }}
+          EXANPLE_ENV_NON_SECRET: hakuna-matata
       - name: step with docker
         uses: docker://alpine:3.8
   Explore-GitHub-Actions2:
